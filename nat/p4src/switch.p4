@@ -165,8 +165,6 @@ header tcp_t tcp;
 
 parser parse_tcp {
     extract(tcp);
-    set_metadata(l4_ports.srcPort, tcp.srcPort);
-    set_metadata(l4_ports.dstPort, tcp.dstPort);
     return select(latest.dstPort) { 
         default: ingress;
     }
@@ -176,8 +174,6 @@ header udp_t udp;
 
 parser parse_udp {
     extract(udp);
-    set_metadata(l4_ports.srcPort, udp.srcPort);
-    set_metadata(l4_ports.dstPort, udp.dstPort);
     return select(latest.dstPort) { 
         default: ingress;
     }
@@ -209,11 +205,10 @@ action doNATOperations(etherAddr, ipAddr, fwdPort) {
 // PrivateToPublicTranslation
 table nat {
 	reads { 
-        ipv4.srcAddr : lpm;
-		ipv4.dstAddr : lpm;
-        ipv4.protocol : exact;
-        l4_ports.srcPort : exact;
-        l4_ports.dstPort : exact;
+		ethernet.srcAddr : exact;
+		ethernet.dstAddr : exact;
+        	ipv4.srcAddr : lpm;
+		ipv4.dstAddr : exact;
 	}
 	actions {
 		_nop; doNATOperations; _drop;

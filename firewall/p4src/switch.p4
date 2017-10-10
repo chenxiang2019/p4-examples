@@ -201,11 +201,11 @@ action forward(port) {
 
 table firewall {
 	reads { 
-        ipv4.srcAddr : lpm;
-		ipv4.dstAddr : lpm;
-        ipv4.protocol : exact;
-        l4_ports.srcPort : exact;
-        l4_ports.dstPort : exact;
+		ipv4.srcAddr : lpm;
+		ipv4.dstAddr : exact;
+		ipv4.protocol : exact;
+		//l4_ports.srcPort : exact;
+		//l4_ports.dstPort : exact;
 	}
 	actions {
 		_nop; forward; _drop;

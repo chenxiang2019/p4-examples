@@ -4,4 +4,4 @@ rm -rf *.pcap
 rm -rf build/
 rm -rf *~
 rm -rf switch.json
-mn -c
+sudo mn -c
