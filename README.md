@@ -34,27 +34,6 @@ $ sudo python setup.py install
 - Firewall: 5-tuple Firewall;
 - NAT: private to public address translation.
 
-## BMv2 Performance Baseline
-
-For testing the performance of these examples, you could fulfill iperf to implement traffic tests.
-
-Example: 
-
-```
-$ cd example_dir/
-$ ./run_14_demo.sh
-
-mininet> xterm h1 h2
-
-// in the console of h2, start server
-h2> cd ../iperf/
-h2> ./server.sh
-
-// in the console of h1, generate 1Gbps traffic
-h1> cd ../iperf/
-h1> ./client.sh
-```
-
 ## Questions
 
 Mail: wasdnsxchen@gmail.com
