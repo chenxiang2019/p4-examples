@@ -7,5 +7,5 @@ For testing these examples with MoonGen, you should first buy 2x10G NICs that su
 - 3.Run the switch on the target machine. Populate the tables with rules.
 - 4.Generate traffic by using MoonGen scripts.
 
-All the examples here could be tested by [p4sc-test.lua](https://github.com/Wasdns/packet-configurations/blob/master/moongen/p4sc-test.lua).
+All the examples here could be tested by [p4sc-tcp-test.lua](https://github.com/Wasdns/packet-configurations/blob/master/moongen/p4sc-tcp-test.lua) and [p4sc-udp-test.lua](https://github.com/Wasdns/packet-configurations/blob/master/moongen/p4sc-udp-test.lua).
 Feel free to modify this script on your demand.
