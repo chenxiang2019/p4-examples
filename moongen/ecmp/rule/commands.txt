@@ -1,0 +1,14 @@
+port_add dpdk0 1
+port_add dpdk1 2
+port_add eth0 3
+table_set_default send_frame _drop
+table_set_default forward _drop
+table_set_default ecmp_group _drop
+table_set_default ecmp_nhop _drop
+table_add send_frame rewrite_mac 1 => 00:00:00:00:00:01
+table_add send_frame rewrite_mac 2 => 00:00:00:00:00:02
+table_add forward set_dmac 10.0.0.1 => 00:00:00:00:00:01
+table_add forward set_dmac 10.0.0.2 => 00:00:00:00:00:02
+table_add ecmp_group set_ecmp_select 10.0.0.1/32 => 0 2
+table_add ecmp_nhop set_nhop 0 => 10.0.0.2 2
+table_add ecmp_nhop set_nhop 1 => 10.0.0.2 2
