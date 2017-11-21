@@ -1,5 +1,5 @@
-port_add dpdk0 1
-port_add dpdk1 2
+port_add eth1 1
+port_add eth2 2
 port_add eth0 3
 table_add firewall forward 10.0.0.2/32 10.0.0.3 17 => 3
 table_add firewall forward 10.0.0.3/32 10.0.0.4 17 => 3
