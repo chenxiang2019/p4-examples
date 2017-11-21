@@ -1,2 +1,2 @@
 switches 1
-hosts 0
+hosts 1
