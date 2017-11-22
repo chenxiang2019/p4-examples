@@ -1,5 +1,5 @@
-port_add eth1 1
-port_add eth2 2
+port_add dpdk0 1
+port_add dpdk1 2
 port_add eth0 3
 table_add port_forward forward 1 => 2
 table_add port_forward forward 2 => 1
